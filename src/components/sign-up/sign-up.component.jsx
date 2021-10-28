@@ -19,6 +19,7 @@ export const SignUp = () => {
   const [typePwd, setTypePwd] = useState('password');
   const [typePwdConfirm, setTypePwdConfirm] = useState('password');
   const [newMaleIcon, setNewMaleIcon] = useState(male);
+  const [pushColor, setPushColor] = useState('')
 
 const handleGenderMale = () => {
   console.log(gender, 'hello');
@@ -88,6 +89,15 @@ const showAlert = () => {
     Please fill input fields correct or/and gender selection.
     `)
   }
+
+}
+
+const setPushedBtn = () => {
+  setPushColor('pushed');
+}
+
+const setUnPushedBtn = () => {
+  setPushColor('unpushed');
 }
   
     return (
@@ -104,12 +114,12 @@ const showAlert = () => {
         style={{marginLeft: '0'}}>
         Gender</h2>
         <div className="gender-boxes-wrapper">
-         <GenderBox icon={handleMaleColor ? maleClicked : newMaleIcon} 
+         <GenderBox icon={handleGenderMale ? male : maleClicked} 
          gender={"Male"} 
          alt='male'
          value={gender} 
          handleGender={handleGenderMale}
-         onMouseDown={handleMaleColor}/>
+         />
 
          <GenderBox icon={female} 
          gender={"Female"}
@@ -129,7 +139,7 @@ const showAlert = () => {
           <div className='input-wrapper'>
           <h2 className='secondary-title'>Email</h2>
           <input
-          className='input-item'
+          className={`${isEmailValid() ? 'valid' : 'invalid'} input-item`}
           type='email'
           placeholder='Enter email'
           value={email}
@@ -139,8 +149,8 @@ const showAlert = () => {
           {
             isEmailValid
              ? 
-             null :
-             <span className='error-descr'>Wrong email</span> 
+             <span></span> :
+             <span className='invalid'>Wrong email</span> 
           }
           </div>
         
@@ -184,10 +194,12 @@ const showAlert = () => {
          
         </div>
 
-        <button className={`${isEmailValid 
-        && isPwdValid 
-        && isPwdConfirmValid ?
-        'pushed' : ''} sign-up-btn`} onClick={showAlert}>
+        <button 
+        className={`${pushColor} sign-up-btn`}
+        onClick={showAlert}
+        onMouseDown={setPushedBtn}
+        onMouseUp={setUnPushedBtn}
+        >
          Sign Up
         </button>
         <div className='form-footer'>

@@ -92,7 +92,16 @@ justify-content: space-between;
                 margin-left: 35px;
                 margin-bottom: 30px;
                 padding: 25px 0 25px 25px;
+            }
 
+            .valid{
+                color: #3C9C41;
+                border-color: #3C9C41;
+            }
+
+            .invalid{
+                color: #D23737;
+                border-color: #D23737;
             }
 
             
@@ -172,10 +181,88 @@ justify-content: space-between;
     }
 
     .pushed{
-        // background-color: #318636;
-        background-color: red;
+        background-color: #318636; 
     }
 
-    .error-descr{
-    color: #D23737;
+    .unpushed{
+       background-color: #3C9C41;
+       
     }
+    @media only screen and (max-width: 767px) {
+
+        body{
+        overflow-x: hidden;
+        }
+
+        .mobile-element{
+            display: block;
+        }
+               
+        .desktop-element{
+            display: none;
+        }
+
+        .sign-up-page-wrapper{
+
+            .form-container {
+                display: flex;
+                max-width: 340px;
+                flex-direction: column;
+                justify-content: center;
+ 
+                .form-header{
+                    .top-icon{
+                        width: 54.57px;
+                        height: 56px;
+                        align-self: center;
+                        margin: 25px 0 21px 0;
+                    }
+                }
+                
+            }
+
+            .gender-container{
+                margin: 0 16px 20px 16px;
+            }
+        }
+
+    .inputs-container{
+        .input-wrapper{
+            .secondary-title{
+            font-size: 16px;
+            line-height: 20px;
+            margin-left: 16px;
+            }
+
+            .input-item{
+            width: 308px;
+            height: 50px;
+            margin: 8px 16px 20px 16px;
+            }
+        }
+    }
+
+    .input-icon{
+        top: -60px;
+    }
+
+    .sign-up-btn{
+    width: 308px;
+    height: 50px;
+    margin: -20px 16px 20px 16px;
+    }
+
+    .footer-title{
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 16px;
+
+    &:last-child{
+        margin-bottom: 18px;
+    }
+    }
+
+    
+}
+
+    

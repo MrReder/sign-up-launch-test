@@ -47,3 +47,33 @@ margin-top: 8px;
     border-color: #3C9C41;
     text-decoration-color: #3C9C41;
 }
+
+@media only screen and (max-width: 767px) {
+
+    .mobile-element{
+        display: block;
+    }
+           
+    .desktop-element{
+        display: none;
+    }
+
+    .gender-box{
+    width: 90px;
+    height: 80px;
+    }
+
+   .gender-icon{
+    margin: 10px 0 8px 0;
+    }
+    .secondary-title{
+    font-size: 16px;
+    line-height: 20px;
+    color: #5B5B5B;
+    }
+    .gender-text{
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 0;
+    }
+}
