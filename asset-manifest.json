@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sign-up-launch-test/static/css/main.e1cf032d.chunk.css",
+    "main.css": "/sign-up-launch-test/static/css/main.b2892ebb.chunk.css",
     "main.js": "/sign-up-launch-test/static/js/main.f6fd1039.chunk.js",
     "main.js.map": "/sign-up-launch-test/static/js/main.f6fd1039.chunk.js.map",
     "runtime-main.js": "/sign-up-launch-test/static/js/runtime-main.9e52dc86.js",
@@ -10,7 +10,7 @@
     "static/js/3.97a10bfe.chunk.js": "/sign-up-launch-test/static/js/3.97a10bfe.chunk.js",
     "static/js/3.97a10bfe.chunk.js.map": "/sign-up-launch-test/static/js/3.97a10bfe.chunk.js.map",
     "index.html": "/sign-up-launch-test/index.html",
-    "static/css/main.e1cf032d.chunk.css.map": "/sign-up-launch-test/static/css/main.e1cf032d.chunk.css.map",
+    "static/css/main.b2892ebb.chunk.css.map": "/sign-up-launch-test/static/css/main.b2892ebb.chunk.css.map",
     "static/js/2.a674775c.chunk.js.LICENSE.txt": "/sign-up-launch-test/static/js/2.a674775c.chunk.js.LICENSE.txt",
     "static/media/female1.b65a885b.svg": "/sign-up-launch-test/static/media/female1.b65a885b.svg",
     "static/media/inputIcon.69a86a9f.svg": "/sign-up-launch-test/static/media/inputIcon.69a86a9f.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.9e52dc86.js",
     "static/js/2.a674775c.chunk.js",
-    "static/css/main.e1cf032d.chunk.css",
+    "static/css/main.b2892ebb.chunk.css",
     "static/js/main.f6fd1039.chunk.js"
   ]
 }
