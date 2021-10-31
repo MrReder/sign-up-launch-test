@@ -20,23 +20,11 @@ export const SignUp = () => {
   const [typePwdConfirm, setTypePwdConfirm] = useState('password');
   const [newMaleIcon, setNewMaleIcon] = useState(male);
 
-const handleGenderMale = () => {
-  console.log(gender, 'hello');
-  setGender('male');
- 
-}
 
 const handleMaleColor = () => {
   setNewMaleIcon(maleClicked);
 }
 
-const handleGenderFemale = () => {
-  setGender('female')
-}
-
-const handleGenderOther = () => {
-  setGender('other')
-}
 
   const handleEmail = (e) => {
       setEmail(e.target.value);
@@ -104,24 +92,30 @@ const showAlert = () => {
         style={{marginLeft: '0'}}>
         Gender</h2>
         <div className="gender-boxes-wrapper">
-         <GenderBox icon={handleMaleColor ? maleClicked : newMaleIcon} 
+         <GenderBox
+             icon={gender === "Male" ? maleClicked : newMaleIcon}
          gender={"Male"} 
          alt='male'
          value={gender} 
-         handleGender={handleGenderMale}
-         onMouseDown={handleMaleColor}/>
+         handleGender={()=>setGender("Male")}
+         onMouseDown={handleMaleColor}
+         />
 
-         <GenderBox icon={female} 
+         <GenderBox
+             icon={gender === "Female" ? femaleClicked : female}
          gender={"Female"}
           alt='female'
-         value={gender} 
-         handleGender={handleGenderFemale}/>
+         value={gender}
+         handleGender={()=>setGender("Female")}
+         />
 
-         <GenderBox icon={other} 
+         <GenderBox
+             icon={other}
          gender={"Other"} 
          alt='other'
          value={gender} 
-         handleGender={handleGenderOther}/>
+         handleGender={()=>setGender("Other")}
+         />
         </div>
         </div>
 
