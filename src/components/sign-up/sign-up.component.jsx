@@ -8,6 +8,7 @@ import maleClicked from '../../assets/male1Clicked.svg';
 import female from '../../assets/female1.svg';
 import femaleClicked from '../../assets/female1clicked.svg';
 import other from '../../assets/other.svg';
+import otherClicked from '../../assets/otherClicked.svg';
 
 
 export const SignUp = () => {
@@ -19,24 +20,21 @@ export const SignUp = () => {
   const [typePwd, setTypePwd] = useState('password');
   const [typePwdConfirm, setTypePwdConfirm] = useState('password');
   const [newMaleIcon, setNewMaleIcon] = useState(male);
-  const [pushColor, setPushColor] = useState('')
-
-const handleGenderMale = () => {
-  console.log(gender, 'hello');
-  setGender('male');
+  const [newFemaleIcon, setNewFemaleIcon] = useState(female);
+  const [newOtherIcon, setNewOtherIcon] = useState(other);
+  const [pushedBtn, setPushedBtn] = useState('');
  
-}
 
 const handleMaleColor = () => {
   setNewMaleIcon(maleClicked);
 }
 
-const handleGenderFemale = () => {
-  setGender('female')
+const handleFemaleColor = () => {
+  setNewFemaleIcon(femaleClicked);
 }
 
-const handleGenderOther = () => {
-  setGender('other')
+const handleOtherColor = () => {
+  setNewOtherIcon(otherClicked);
 }
 
   const handleEmail = (e) => {
@@ -67,6 +65,7 @@ const isEmailValid = () => {
   const check = /\S+@\S+\.\S+/;
   return check.test(email.toLowerCase())
 };
+
 const isPwdValid = () => {
   const check = /[a-zA-Z0-9]{6,50}/;
   return check.test(pwd);
@@ -92,13 +91,6 @@ const showAlert = () => {
 
 }
 
-const setPushedBtn = () => {
-  setPushColor('pushed');
-}
-
-const setUnPushedBtn = () => {
-  setPushColor('unpushed');
-}
   
     return (
     <div className='sign-up-page-wrapper'>
@@ -114,24 +106,35 @@ const setUnPushedBtn = () => {
         style={{marginLeft: '0'}}>
         Gender</h2>
         <div className="gender-boxes-wrapper">
-         <GenderBox icon={handleGenderMale ? male : maleClicked} 
+         <GenderBox 
+        className={gender === "male" ? "gender-choosen" : " "}
+        icon={gender === "male" ? maleClicked : newMaleIcon}
          gender={"Male"} 
          alt='male'
          value={gender} 
-         handleGender={handleGenderMale}
+        handleGender={()=>setGender("male")}
+        onMouseDown={handleMaleColor}
          />
 
-         <GenderBox icon={female} 
+         <GenderBox 
+         className={gender === "female" ? "gender-choosen" : " "}
+         icon={gender === "female" ? femaleClicked : newFemaleIcon}
          gender={"Female"}
-          alt='female'
+         alt='female'
          value={gender} 
-         handleGender={handleGenderFemale}/>
+         handleGender={()=>setGender("female")}
+         onMouseDown={handleFemaleColor}
+         />
 
-         <GenderBox icon={other} 
+         <GenderBox
+         className={gender === "other" ? "gender-choosen" : " "}
+         icon={gender === "other" ? otherClicked : newOtherIcon} 
          gender={"Other"} 
          alt='other'
          value={gender} 
-         handleGender={handleGenderOther}/>
+         handleGender={()=>setGender("other")}
+         onMouseDown={handleOtherColor}
+         />
         </div>
         </div>
 
@@ -147,17 +150,17 @@ const setUnPushedBtn = () => {
           required
           />
           {
-            isEmailValid
+            isEmailValid()
              ? 
              <span></span> :
-             <span className='invalid'>Wrong email</span> 
+             <span className='invalid invalid-text'>Input correct format of email</span> 
           }
           </div>
         
           <div className='input-wrapper'>
           <h2 className='secondary-title'>Password</h2>
           <input
-          className='input-item'
+          className={`${isPwdValid() ? 'valid' : 'invalid'} input-item`}
            type={typePwd}
            placeholder='Enter your password'
            value={pwd}
@@ -171,12 +174,18 @@ const setUnPushedBtn = () => {
           onClick={showPwd}
           className='input-icon'
           />
+          {
+            isPwdValid()
+             ? 
+             <span></span> :
+             <span className='invalid invalid-text'>Password should contain at least 6 symbols</span> 
+          }
           </div>
           
           <div className='input-wrapper'>
           <h2 className='secondary-title'>Confirm password</h2>
           <input
-          className='input-item'
+          className={`${isPwdConfirmValid() ? 'valid' : 'invalid'} input-item`}
            type={typePwdConfirm}
            placeholder='Confirm your password'
            value={pwdConfirm}
@@ -195,10 +204,10 @@ const setUnPushedBtn = () => {
         </div>
 
         <button 
-        className={`${pushColor} sign-up-btn`}
+        className={'sign-up-btn ' + pushedBtn}
         onClick={showAlert}
-        onMouseDown={setPushedBtn}
-        onMouseUp={setUnPushedBtn}
+        onMouseDown={()=>setPushedBtn('pushed')}
+        onMouseUp={()=>setPushedBtn('unpushed')}
         >
          Sign Up
         </button>

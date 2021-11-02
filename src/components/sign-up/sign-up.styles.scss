@@ -74,7 +74,6 @@ justify-content: space-between;
         
         
         .secondary-title{
-            font-family: Montserrat;
             font-style: normal;
             font-weight: bold;
             font-size: 18px;
@@ -104,6 +103,14 @@ justify-content: space-between;
                 border-color: #D23737;
             }
 
+            .invalid-text{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            margin: -20px 0 12px 35px;
+            }
+
             
 }
 
@@ -120,6 +127,7 @@ justify-content: space-between;
     top: -75px;
     left: 40%;
     margin-right: 27px;
+    cursor: pointer;
     }
 
     .gender-choosen{
@@ -144,6 +152,7 @@ justify-content: space-between;
         color: #FFFFFF;
         text-decoration-color: #FFFFFF;
         margin-bottom: 30px;
+        border: none;
 
         &:hover{
             background-color: #4DB252;
@@ -179,6 +188,8 @@ justify-content: space-between;
             margin-left: 5px;
         }
     }
+
+    
 
     .pushed{
         background-color: #318636; 
@@ -239,6 +250,14 @@ justify-content: space-between;
             height: 50px;
             margin: 8px 16px 20px 16px;
             }
+
+            .invalid-text{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 18px;
+                margin: -10px 0 12px 15px;
+            }
         }
     }
 
@@ -259,9 +278,9 @@ justify-content: space-between;
 
     &:last-child{
         margin-bottom: 18px;
+     }
     }
-    }
-
+    
     
 }
 
